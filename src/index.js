@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const Interpunct = ({ children, matchLength = 1, visible = true, replacementString = '•', repeatLength = true }) => {
+const Interpunct = ({ children, matchLength = 1, visible = true, replacementString = '·', repeatLength = true }) => {
   if (!visible) {
     return children
   }
