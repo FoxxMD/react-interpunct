@@ -15,16 +15,30 @@ npm install --save react-interpunct
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-interpunct'
+import Interpunct from 'react-interpunct'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <Interpunct>Your text with  spaces here  </Interpunct>
     )
   }
 }
 ```
+Outputs
+```
+Your·text·with··spaces·here··
+```
+
+## Props
+
+| Property            | Type               | Default                               | Description                                                                                                                                                                   |
+|:--------------------|:-------------------|:--------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `children`          | string             | undefined                             | Text to be rendered with Interpunct                                                                                                                                           |
+| `matchLength`       | integer            | 1                                     | Number of consecutive whitespace characters to match before replacing                                                                                                         |
+| `replacementString` | string             | [· (middle dot)](http://middot.net/)  | String used to replace whitespace characters                                                                                                                                  |
+| `respectLength`     | bool               | `true`                                | When `true` the string given for `replacementString` will be repeated to the length of the matched whitespace. When `false` `replacementString` will replace the entire match |
+| `visible`           | bool               | `true`                                | If set to `false` then `children` will be returned without manipulation                                                                                                       |
 
 ## License
 
