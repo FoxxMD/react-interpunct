@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'react-interpunct'
+import Interpunct from 'react-interpunct'
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Interpunct>Your text with  spaces here  </Interpunct>
       </div>
     )
   }
