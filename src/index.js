@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const Interpunct = ({ children, matchLength = 1, enable = true, replacementString = '·', repeatLength = true }) => {
+const Interpunct = ({ children, matchLength = 1, enable = true, replacementString = '·', respectLength = true }) => {
   if (!enable) {
     return children
   }
@@ -11,7 +11,7 @@ const Interpunct = ({ children, matchLength = 1, enable = true, replacementStrin
   const reg = new RegExp(`([\\s]{${matchLength},})`, 'g')
 
   return children.replace(reg, (match) => {
-    if (repeatLength) {
+    if (respectLength) {
       return replacementString.repeat(match.length)
     }
     return replacementString
@@ -20,9 +20,9 @@ const Interpunct = ({ children, matchLength = 1, enable = true, replacementStrin
 
 Interpunct.propTypes = {
   children: PropTypes.string,
-  visible: PropTypes.bool,
-  replacementChar: PropTypes.string,
-  repeatLength: PropTypes.bool,
+  enable: PropTypes.bool,
+  replacementString: PropTypes.string,
+  respectLength: PropTypes.bool,
   matchLength: PropTypes.number
 }
 
