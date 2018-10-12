@@ -5,6 +5,10 @@ const Interpunct = ({ children, matchLength = 1, enable = true, replacementStrin
   if (!enable) {
     return children
   }
+  if (typeof children !== 'string') {
+    console.error('Value must be a string')
+    return null
+  }
 
   // https://stackoverflow.com/a/3758841/1469797
   // ([\s]{2,})
